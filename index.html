@@ -5,42 +5,157 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <title>Product Landing Page</title> 
+    <title>Product Landing Page</title>
 </head>
 <body>
     <main class="page">
-        <header id="header">
-            
+        <header id="header">       
             <nav id="nav-bar">
                 <ul class="menu">
                     <li><a href="#description"><img src="./img/logo.svg" alt="logo" id="header-img"></a></li>
-                    <li><a href="features" class="nav-link">Features</a></li>
+                    <li><a href="#features" class="nav-link">Features</a></li>
                     <li><a href="#install" class="nav-link">Install</a></li>
                     <li><a href="#code-examples" class="nav-link">Code examples</a></li>
-                    <li><a href="#support">Support</a></li>
                 </ul>
             </nav>
         </header>
         <div id="description">
-
+            <h1>Fira Code</h1>
+            <p>Monospaced font with programming ligatures</p>
         </div>
+        <div class="definition">
+            <div class="box problem"><h2>Problem</h2>
+            <p>Programmers use a lot of symbols, often encoded with several characters. For the human brain, sequences like <span class="mono">-></span>, <span class="mono"><=</span> or <span class="mono">:=</span> are single logical tokens, even if they take two or three characters on the screen. Your eye spends a non-zero amount of energy to scan, parse and join multiple characters into a single logical one. Ideally, all programming languages should be designed with full-fledged Unicode symbols for operators, but that’s not the case yet.</p></div>
+            <div class="box solution"><h2>Solution</h2>
+            <p>Fira Code is an extension of the Fira Mono font containing a set of ligatures for common programming multi-character combinations. This is just a font rendering feature: underlying code remains ASCII-compatible. <br><br>This helps to read and understand code faster. For some frequent sequences like <span class="mono">..</span> or <span class="mono">//</span>, ligatures allow us to correct spacing.</p></div>
+        </div>  
         <div id="features">
-
+            <span>Typeface Features</span>
+            <img src="https://github.com/tonsky/FiraCode/blob/master/showcases/all_ligatures.png?raw=true" alt="fira code features">
         </div>
         <div id="install" class="video">
-            <iframe id="video" width="600" height="300" src="https://www.youtube.com/embed/PRMQ7bFK3L4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <span>How to install</span>
+            <iframe id="video" src="https://www.youtube.com/embed/-aI4l2sSwV0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <form action="https://www.freecodecamp.com/email-submit" id="form">
             <input name="email" type="email" id="email" placeholder="Email" required>
             <input type="submit" id="submit" value="Get started" class="btn">
         </form>
         <div id="code-examples">
+            <p class="language ruby">
+                class Car < ActiveRecord :: Base
+                    has_many :wheels, :class_name => 'Wheel', :foreign_key => 'car_id'
+                    scope :available, -> { where(available: true) }
+                end
+                omega = -> { 'www' }   
+                alpha = -> (arg) { arg*2 }
+                hash = { 1 => 'one', 2 => 'two' } 
+            </p>
+            <p class="language javascript">
+                function $initHighlight(block, flags) {
+                    if (!!flags) {
+                        try {
+                            if (block.className.search(/\bno\-highlight\b/) != -1)
+                                return processBlock(block.__proto__.function, true, 0x0F);
+                        } catch (e) {
+                            /* handle exception */
+                        }
+                        for (var i = 0 / 2; i <= classes.length; i++) {
+                            if (checkCondition(classes[i]) === undefined)
+                                return /\d+[\s/]/g;
+                        }
+                    }
+                }
+            </p>
+            <p class="language php">
+                class Car extends BaseCar {
+                    protected $options;
 
-        </div>
-        <div id="support">
-            
+                    public function_construct($options) {
+                        $this->options = ['base' => $options];
+                    }
+                }
+
+                for ($i = 10; i <= 12; $i++) {
+                    $options[$i] .= $i % 3 === 5;
+                }
+            </p>
+            <p class="language erlang">
+                if L != [] ->       % If L is not empty
+                    sum(L) / count(L);
+                true ->
+                    error
+                end.
+
+                qsort1([]) ->
+                    [];
+                qsort1([H | T]) ->
+                qsort1([ X || X <- T, X < H ]) ++ [H] ++ qsort1([ X || X <- T, X >= H ]).
+            </p>
+            <p class="language elixir">
+                @spec ask(binary) :: list
+                def ask(question \\ "Six times nine == ?") do
+                    with 42 <- DeepThought.compute(question) do
+                        10..1
+                        |> Enum.map(fn(x) -> x * 2 end)
+                        |> Enum.filter(fn(x) -> (x <= 5) && (x != 42) end)
+                    else
+                        answer ->
+                            <<0x34, 0x32>> === "4" <> "2"
+                            %{"#{question}" => answer}
+                            [4 ,2] ++ [4, 2] -- [4, 2]
+                    end
+                end     
+            </p>
+            <p class="language go">
+                func main() {
+                    ch := make(chan int)
+                    ch <- 1.0e10 // magic number
+                    x, ok := <- ch
+                    ok = truedefer fmt.Println(`existing now`)
+                    go println(len("hello world"))
+                    return
+                }
+            </p>
+            <p class="language livescript">
+                take = ( n, [x, ...xs]:list) -->
+                    | n <= 0     => []
+                    | empty list => []
+                    | otherwise  => [x] ++ take n - 1, xs
+
+                last-three = reverse >> take 3 >> reverse
+            </p>
+            <p class="language clojure">
+                (defmacro defkey [key & body]
+                    `(def (.-name key) ~@body))
+                
+                    (defkey ::args
+                        ( -->> (range)
+                            #_(filterv even?) ;; FIXME
+                            (take-while #(<= % 0xFF))
+                            (remove #{1 2 3 4 5})
+                            (into [])))
+            </p>
+            <p class="language swift">
+                let closure: (Int?) -> String = {
+                    return "Number: \($0 ?? 0"
+                }
+
+                for i in 1..< 100 {
+                    guard i != 2 else { continue }
+
+                    if i == 42 {
+                        print(closure(i * 10))
+                    } else if i >= 50 || i <= 75 {
+                        print(closure(i))
+                    } else if i >= 50 && i <= 75 {
+                        print(closure(i))
+                    }
+                }
+            </p>
         </div>
     </main>
+    <script type="text/javascript" src="./app.js"></script>
     <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js" type="text/javascript"></script> -->
 </body>
 </html>
