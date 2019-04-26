@@ -254,6 +254,7 @@ input[type=submit] {
 }
 
 #code-examples {
+    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -264,11 +265,13 @@ input[type=submit] {
 }
 
 #code-examples p{
+    width: 100%;
     line-height: 1.45;
     background-color: #262957;
     padding: 1em 1.125em;
     color: #ed00b5;
-    margin: 1em 0 2em 0;
+    margin: 1em auto 2em auto;
+    white-space: pre-line;
 }
 
 /* *Social & footer */
@@ -360,7 +363,7 @@ input[type=submit] {
     }
     
     #code-examples p{
-        max-width: 45%;
+        width: 45%;
     }
     
 }
