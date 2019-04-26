@@ -19,7 +19,6 @@ console.log(test.replace(/\s/g, '')); */
 }); */
 
 
-
 let search = ( str, what ) => {
 	return '"' + what + '" was found ' + str.match( new RegExp( what, 'g' )).length + ' times';
 }
@@ -32,3 +31,10 @@ let search = ( str, what ) => {
 
 search("classCar<ActiveRecord::Basehas_many:wheels,:class_name=>'Wheel',:foreign_key=>'car_id'scope:available,->{where(available:true)}endomega=->{'www'}alpha=->(arg){arg*2}hash={1=>'one',2=>'two'}","->");
 
+
+const header = document.getElementById('header');
+
+window.addEventListener('scroll', function() {
+    header.style.boxShadow = '0px 6px 8px -5px rgba(25,36,77,0.5)';
+    header.style.backgroundColor = 'rgba(38,41,87,0.95)';
+})

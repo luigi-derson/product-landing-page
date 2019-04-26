@@ -1,9 +1,3 @@
-/* 
-    TODO: My product landing page should have at least one media query. 
-    TODO: My product landing page should utilize CSS flexbox at least once.
-    TODO: Navbar should always be at the top of viewport 
-*/
-
 /* *Global styling */
 
 @import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css);
@@ -20,84 +14,97 @@ html, body {
 
 main.page {
     max-width: 100vw;
-    position: relative;
+    background-color: #fff;
+    margin-top: 98px;
 }
 
+
 a, a:link {
-    color: black;
+    color: #fff;
     text-decoration: none;
 }
+
 
 /* *Header */
 
 #header-img {
-    height: 1.375em; 
+    height: 1.375em;
+    padding: 1em 0;
 }
 
 #nav-bar ul li {
     display: inline-block;
-    padding: 0 0.625em;
+    padding: 0 0.35em 1em 0.35em;
+    list-style: none;
+    font-size: 1.125em;
 }
 
 header {
     text-align: center;
-    padding: 1em;
-    background-color: bisque;
-    /* position: fixed; */
-    /* width: 100vw; */
+    background-color: #262957;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    width: 100vw;
+    z-index: 2;
 }
 
 /* *Description */
 
-#description h1 {
+#description span {
     font-size: 7em;
+    font-weight: 500;
+    line-height: 1;
+    color: #ed00b5;
 }
 
 #description p {
     font-size: 1.6em;
+    color: #9400ff;
+    padding-top: 1.5rem;
 }
 
 #description {
     text-align: center;
-    height: 20em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    padding: 2rem 0;
 }
 
 .definition {
     display: flex;
+    flex-direction: column;
     width: 100%;
 }
 
 .box {
-    width: 50%;
-    padding: 1.125em 1em;
+    padding: 1.5em 1.125em;
 }
 
 .box p {
     width: 95%;
     margin: 0 auto;
     line-height: 1.45;
+    font-size: 1.125em;
 }
 
 .problem {
-    background-color: bisque;
+    background-color: #ffe900;
 }
 
 .solution {
-    background-color: #eaeaea;
+    background-color: #9400ff;
+    color: white;
 }
 
 .box h2 {
     padding-bottom: 1rem;
-    font-weight: 500;
+    font-weight: 700;
     text-align: center;
 }
 
 span.mono {
     font-family: monospace;
+    color: crimson;
+    font-weight: 700;
 }
 
 /* *Features */
@@ -107,56 +114,253 @@ span.mono {
     font-size: 2em;
     font-weight: 500;
     padding-bottom: 1.5rem;
+    color: #ed00b5
 }
 
 #features {
     text-align: center;
-    padding: 3em 0;
+    padding: 2em 0 0.5em 0;
 }
 
 #features img {
     width: 90%;
 }
 
+.one-image {
+    display: none;
+}
+
 /* *Install */
+
+#install {
+    background-color: #ed00b5;
+    font-size: 1.125em;
+    font-weight: 500;
+    line-height: 1.45;
+    color: #262957;
+}
+
+#install a:link {
+    color: #fff;
+}
+
+#install a:visited {
+    color: #9400ff;
+}
+
+#install a:hover {
+    color: #9400ff;
+}
+
+#install p {
+    width: 85%;
+    margin: 0 auto;
+    padding: 0.5rem;
+}
+
+#install ul {
+    width: 85%;
+    margin: 0 auto;
+    list-style: none;
+}
+
+#install ul li {
+    padding-bottom: 0.5em;
+    color: #ffe900;
+}
 
 #install span {
     display: block;
     font-size: 2em;
     font-weight: 500;
-    padding-bottom: 1.5rem;
+    padding: 1.5rem 0;
     text-align: center;
+    color: #ffe900;
 }
 
-iframe {
-    width: 85%;
-    height: 400px;
-    display: block;
-    margin: 0 auto;
+.videowraper {
+    position: relative;
+    margin-top: 2em;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
 }
+
+.videowraper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 /* *Form */
-
-form input {
-    height: 2em;
-}
 
 form {
     text-align: center;
-    margin: 2em 0;
+    margin: 3em auto;
+    display: block;
+}
+
+form p {
+    color: #ed00b5;
+    font-weight: 500;
+    font-size: 1.125em;
+    padding-bottom: 1em;
+    text-transform: uppercase;
+}
+
+input[type=email] {
+    width: 75%;
+    height: 2rem;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    font-size: 1em;
+    font-family: 'Fira code';
+    color: #9400ff;
+    border-bottom: 2px solid #ed00b5;
+}
+
+input[type=submit] {
+    width: 75%;
+    height: 3em;
+    margin-top: 1rem;
+    font-size: 1em;
+    font-family: 'Fira code';
+    font-weight: 500;
+    color: #fff;
+    background-color: #9400ff;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    cursor: pointer;
 }
 /* *Code examples */
+#code-examples span {
+    display: block;
+    font-size: 2em;
+    font-weight: 500;
+    padding-bottom: 1.5rem;
+    color: #ed00b5
+}
+
+#code-examples h2 {
+    font-weight: 500;
+    font-size: 1.5em;
+    color: #9400ff;
+}
 
 #code-examples {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
-    background-color: #eaeaea;
+    overflow: hidden;
+    background-color: #ffe900;
     justify-content: space-around;
+    padding: 1.5em 0;
 }
 
 #code-examples p{
-    width: 80%;
-    background-color: bisque;
-    margin: 1em 0;
+    line-height: 1.45;
+    background-color: #262957;
+    padding: 1em 1.125em;
+    color: #ed00b5;
+    margin: 1em 0 2em 0;
+}
+
+/* *Social & footer */
+
+.social {
+    padding-top: 2rem;
+    text-align: center;
+    font-size: 1.5em;
+    background-color: #000;
+}
+
+.social a:link, footer a:link {
+    color: #9400ff;
+}
+
+.social a:hover, footer a:hover {
+    color: #ed00b5;
+}
+
+.fab {
+    padding: 0 0.4em;
+}
+
+.footer {
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 1.2em 0;
+    background-color: #000;
+}
+
+@media screen and (min-width: 820px) {
+
+    #description {
+        padding: 3rem 0;
+    }
+
+    .definition {
+        flex-direction: unset;
+    }
+
+    .box {
+        width: 50%;
+    }
+
+    .box p {
+        width: 85%;
+    }
+
+    #features {
+        text-align: center;
+        padding: 2em 0 2em 0;
+    }
+
+    .one-image {
+        display: inline;
+    }
+
+    .firacodeimg, .firamonoimg {
+        display: none;
+    }
+
+    #install p {
+        width: 45%;
+        margin: 0 auto;
+        padding: 0.5rem;
+    }
+    
+    #install ul {
+        width: 45%;
+    }
+
+    .videowraper {
+        margin: 2em auto 0 auto;
+        padding-bottom: 50.25%;
+        width: 70%;
+    }
+    
+    .videowraper iframe {
+        height: 80%;
+    }
+    
+
+    input[type=email] {
+        width: 30%;
+    }
+    
+    input[type=submit] {
+        width: 20%;
+    }
+    
+    #code-examples p{
+        max-width: 45%;
+    }
+    
 }
